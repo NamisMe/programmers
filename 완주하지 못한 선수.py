@@ -1,8 +1,3 @@
-def solution1(participant, completion):
-    for c in completion:
-        participant.remove(c)
-    return participant[0]
-
 def solution(participant, completion):
     participant_dict = {}
     completion_dict = {}
@@ -19,6 +14,8 @@ def solution(participant, completion):
         else:
             completion_dict[c] = 1
     
+    print(participant.items())
+
     for p, count in participant_dict.items():
         if p not in completion_dict or count > completion_dict[p]:
             return p
